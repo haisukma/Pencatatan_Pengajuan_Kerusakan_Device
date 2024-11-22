@@ -5,8 +5,8 @@
             <?= $sub; ?>
         </div>
         <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-            <a href="<?php echo site_url('Pengajuan_Kerusakan/create') ?>">
-                <button class="btn btn-primary shadow-md mr-2">Tambah Data Pengajuan</button></a>
+            <a href="<?php echo site_url('Kendaraan/create') ?>">
+                <button class="btn btn-primary shadow-md mr-2">Tambah Perangkat</button></a>
         </div>
     </div>
     <!-- BEGIN: HTML Table Data -->
@@ -25,23 +25,21 @@
                         class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1">Reset</button>
                 </div>
             </form>
-            <div class="flex mt-5 sm:mt-3 mb-3 ml-auto">
+            <div class="flex mt-5 sm:mt-0">
                 <div class="dropdown w-1/2 sm:w-auto">
                     <button class="dropdown-toggle btn btn-pending w-full sm:w-auto" aria-expanded="false"
-                        data-tw-toggle="dropdown">
-                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export
-                        <i data-lucide="chevron-down" class="w-4 h-4 ml-auto sm:ml-2"></i>
-                    </button>
+                        data-tw-toggle="dropdown"> <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export <i
+                            data-lucide="chevron-down" class="w-4 h-4 ml-auto sm:ml-2"></i> </button>
                     <div class="dropdown-menu w-40">
                         <ul class="dropdown-content">
                             <li>
-                                <a id="tabulator-print" href="<?php echo site_url('Pengajuan_Kerusakan/print') ?>"
+                                <a id="tabulator-print" href="<?php echo site_url('Perangkat/print') ?>"
                                     class="dropdown-item" target="_BLANK">
                                     <i data-lucide="printer" class="w-4 h-4 mr-2"></i> Print
                                 </a>
                             </li>
                             <li>
-                                <a id="tabulator-export-xlsx" href="<?php echo site_url('Pengajuan_Kerusakan/excel') ?>"
+                                <a id="tabulator-export-xlsx" href="<?php echo site_url('Perangkat/excel') ?>"
                                     class="dropdown-item">
                                     <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export XLSX
                                 </a>
@@ -53,16 +51,15 @@
         </div>
         <div class="overflow-x-auto">
             <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
-                <table id="pengajuan_kerusakan-table" class="table table-report -mt-2">
+                <table id="kendaraan-table" class="table table-report -mt-2">
                     <thead>
                         <tr>
                             <th class="text-center whitespace-nowrap">No</th>
-                            <th class="text-center whitespace-wrap">Kode Pengajuan</th>
-                            <th class="text-center whitespace-wrap">Kode User</th>
                             <th class="text-center whitespace-wrap">Kode Perangkat</th>
-                            <th class="text-center whitespace-wrap">Tanggal Pengajuan</th>
-                            <th class="text-center whitespace-wrap">Deskripsi Kerusakan</th>
-                            <th class="text-center whitespace-wrap">Status Pengajuan</th>
+                            <th class="text-center whitespace-wrap">Nama Perangkat</th>
+                            <th class="text-center whitespace-wrap">Merk</th>
+                            <th class="text-center whitespace-wrap">Serial Number</th>
+                            <th class="text-center whitespace-wrap">Lokasi Perangkat</th>
                             <th class="text-center whitespace-nowrap">Aksi</th>
                         </tr>
                     </thead>
@@ -70,7 +67,7 @@
                         <?php
                         $no = 1;
                         //$read yang diambil dari control function index
-                        foreach ($read->result_array() as $row) {
+                            if ($row['id_perangkat'] == $this->session->userdata('id_perangkat')) {
                                 ?>
                                 <tr class="intro-x">
                                     <td class="w-40">
@@ -80,63 +77,60 @@
                                     </td>
                                     <td class="w-40 whitespace-nowrap">
                                         <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['id_pengajuan'] ?>
-                                        </div>
-                                    </td>
-                                    <td class="w-40 whitespace-nowrap">
-                                        <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['id_users'] ?>
-                                        </div>
-                                    </td>
-                                    <td class="w-40 whitespace-nowrap">
-                                        <div class="flex items-center justify-center capitalize">
                                             <?php echo $row['id_perangkat'] ?>
                                         </div>
                                     </td>
                                     <td class="w-40 whitespace-nowrap">
                                         <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['tanggal_pengajuan'] ?>
+                                            <?php echo $row['nama_perangkat'] ?>
                                         </div>
                                     </td>
                                     <td class="w-40 whitespace-nowrap">
                                         <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['deskripsi_kerusakan'] ?>
+                                            <?php echo $row['merk'] ?>
                                         </div>
                                     </td>
                                     <td class="w-40 whitespace-wrap">
                                         <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['status_pengajuan'] ?>
+                                            <?php echo $row['serial_number'] ?>
+                                        </div>
+                                    </td>
+                                    <td class="w-40 whitespace-wrap">
+                                        <div class="flex items-center justify-center capitalize">
+                                            <?php echo $row['lokasi_perangkat'] ?>
                                         </div>
                                     </td>
                                     <td class="table-report__action w-56">
                                         <div class="flex justify-center items-center">
                                             <a class="flex items-center mr-3"
-                                                href="<?php echo site_url('Pengajuan_Kerusakan/edit/' . $row['id_pengajuan']) ?>"> <i
-                                                    data-lucide="edit" class="w-4 h-4 mr-1"></i> Edit </a>
+                                                href="<?php echo site_url('Perangkat/edit/' . $row['id_perangkat']) ?>">
+                                                <i data-lucide="edit" class="w-4 h-4 mr-1"></i> Edit
+                                            </a>
                                             <a class="flex items-center text-danger"
-                                                href="<?php echo site_url('Pengajuan_Kerusakan/delete/' . $row['id_pengajuan']) ?>"
-                                                onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['id_pengajuan'], 'dengan id_users', $row['id_users']; ?>')">
-                                                <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                                            <?php
-                                            $no++;
+                                                href="<?php echo site_url('Perangkat/delete/' . $row['id_perangkat']) ?>"
+                                                onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['id_perangkat'], ' ', $row['nama_perangkat']; ?>')">
+                                                <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php
+                                $no++;
                             }
                         ?>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
+
                 </table>
             </div>
             <!-- END: Data List -->
         </div>
-        <div id="pagination-container" class="pagination"></div>
     </div>
 </div>
 <!-- END: Content -->
 <script>
     document.getElementById('tabulator-html-filter-go').addEventListener('click', function () {
         var value = document.getElementById('tabulator-html-filter-value').value.toLowerCase();
-        var table = document.getElementById('pengajuan_kerusakan-table');
+        var table = document.getElementById('perangkat-table');
         var rows = table.getElementsByTagName('tr');
 
         for (var i = 0; i < rows.length; i++) {
@@ -164,7 +158,7 @@
 
     document.getElementById('tabulator-html-filter-reset').addEventListener('click', function () {
         document.getElementById('tabulator-html-filter-value').value = '';
-        var table = document.getElementById('pengajuan_kerusakan-table');
+        var table = document.getElementById('perangkat-table');
         var rows = table.getElementsByTagName('tr');
 
         for (var i = 0; i < rows.length; i++) {

@@ -11,7 +11,7 @@
 
     <?php
     header("Content-type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=Data Admin.xlsx");
+    header("Content-Disposition: attachment; filename=Data Perangkat yang Diajukan.xlsx");
     ?>
     <style type="text/css">
         body {
@@ -51,48 +51,47 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Kode User</th>
-                            <th>Username</th>
-                            <th>Divisi</th>
-                            <th>Password</th>
-                            <th>Level</th>
-                        </tr>
+                            <th>Kode Perangkat</th>
+                            <th>Nama Perangkat</th>
+                            <th>Merk</th>
+                            <th>Serial Number</th>
+                            <th>Lokasi Perangkat</th>
                     </thead>
                     <tbody>
                         <?php
                         $no = 1;
                         //$read yang diambil dari control function index
-                        foreach ($read_admin->result_array() as $row) {
+                        foreach ($read->result_array() as $row) {
                             ?>
                             <tr>
-                                <td>
-                                    <div style="text-align: center;">
+                                <td class="w-40">
+                                    <div class="flex">
                                         <?php echo $no ?>
                                     </div>
                                 </td>
-                                <td>
-                                    <div style="text-align: center;">
-                                        <?php echo $row['id_users'] ?>
+                                <td class="w-40 whitespace-nowrap">
+                                    <div class="flex items-center justify-center capitalize">
+                                        <?php echo $row['id_perangkat'] ?>
                                     </div>
                                 </td>
-                                <td>
-                                    <div style="text-align: center;">
-                                        <?php echo $row['username'] ?>
+                                <td class="w-40 whitespace-nowrap">
+                                    <div class="flex items-center justify-center capitalize">
+                                        <?php echo $row['nama_perangkat'] ?>
                                     </div>
                                 </td>
-                                <td>
-                                    <div style="text-align: center;">
-                                        <?php echo $row['divisi'] ?>
+                                <td class="w-40 whitespace-nowrap">
+                                    <div class="flex items-center justify-center capitalize">
+                                        <?php echo $row['merk'] ?>
                                     </div>
                                 </td>
-                                <td>
-                                    <div style="text-align: center;">
-                                        <?php echo $row['pswd_users'] ?>
+                                <td class="w-40 whitespace-wrap">
+                                    <div class="flex items-center justify-center capitalize">
+                                        <?php echo $row['serial_number'] ?>
                                     </div>
                                 </td>
-                                <td>
-                                    <div style="text-align: center;">
-                                        <?php echo $row['level'] ?>
+                                <td class="w-40 whitespace-wrap">
+                                    <div class="flex items-center justify-center capitalize">
+                                        <?php echo $row['lokasi_perangkat'] ?>
                                     </div>
                                 </td>
                             </tr>

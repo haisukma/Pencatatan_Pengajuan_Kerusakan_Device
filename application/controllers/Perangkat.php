@@ -22,7 +22,7 @@ class Perangkat extends CI_Controller
             //'read' variabel yang akan dipanggil pada view read.php
             'username' => $this->session->userdata('username'),
             'level' => $this->session->userdata('level'),
-            'judul' => "Wajib Master",
+            'judul' => "Data Master",
             'sub' => "Data Perangkat Pengguna",
             'read' => $read
         );
@@ -30,7 +30,7 @@ class Perangkat extends CI_Controller
         dengan $this->view artinya memanggil private $view="backend/v_user/"
         dilanjutkan dengan 'read' untuk memanggil read.php
         */
-        $this->template->load('templateAdmin/Perangkat', $this->view . 'read', $data);
+        $this->template->load('templateUser/Perangkat', $this->view . 'read', $data);
     }
     public function create()
     {
@@ -41,7 +41,7 @@ class Perangkat extends CI_Controller
             'sub' => "Tambah Perangkat Pengguna",
             'create' => ''
         );
-        $this->template->load('templateAdmin/Perangkat', $this->view . 'create', $data);
+        $this->template->load('templateUser/Perangkat', $this->view . 'create', $data);
         // $this->load->view($this->view . 'create', $data);
     }
     public function save()
@@ -70,7 +70,7 @@ class Perangkat extends CI_Controller
             'edit' => $this->M_perangkat->edit($kd)
         );
         // $this->load->view($this->view . 'edit', $data);
-        $this->template->load('templateAdmin/Perangkat', $this->view . 'edit', $data);
+        $this->template->load('templateUser/Perangkat', $this->view . 'edit', $data);
     }
     public function update()
     {
@@ -94,6 +94,28 @@ class Perangkat extends CI_Controller
         redirect($this->redirect, 'refresh');
 
 
+    }
+    public function print()
+    {
+        $data['print'] = $this->M_perangkat->GetAll();
+        $read = $this->M_perangkat->GetAll();
+        $data = array(
+            //'read' variabel yang akan dipanggil pada view read.php
+            'judul' => "Data Perangkat Pengguna",
+            'read' => $read
+        );
+        $this->load->view($this->view . 'print', $data);
+    }
+    public function excel()
+    {
+        $data['print'] = $this->M_perangkat->GetAll();
+        $read = $this->M_perangkat->GetAll();
+        $data = array(
+            //'read' variabel yang akan dipanggil pada view read.php
+            'judul' => "Data Perangkat Pengguna",
+            'read' => $read
+        );
+        $this->load->view($this->view . 'excel', $data);
     }
 
 }

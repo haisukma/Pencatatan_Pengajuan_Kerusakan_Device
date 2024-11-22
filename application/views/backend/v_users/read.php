@@ -104,7 +104,7 @@
                     <div class="dropdown-menu w-40">
                         <ul class="dropdown-content">
                             <li>
-                                <a id="tabulator-print" href="<?php echo site_url('Users/printAdmin') ?>"
+                                <a id="tabulator-print" href="<?php echo site_url('Users/printUser') ?>"
                                     class="dropdown-item" target="_BLANK">
                                     <i data-lucide="printer" class="w-4 h-4 mr-2"></i> Print
                                 </a>

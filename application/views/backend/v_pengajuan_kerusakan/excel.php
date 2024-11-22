@@ -11,7 +11,7 @@
 
     <?php
     header("Content-type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=Data Admin.xlsx");
+    header("Content-Disposition: attachment; filename=Data Pengajuan.xls");
     ?>
     <style type="text/css">
         body {
@@ -51,18 +51,19 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Kode Pengajuan</th>
                             <th>Kode User</th>
-                            <th>Username</th>
-                            <th>Divisi</th>
-                            <th>Password</th>
-                            <th>Level</th>
+                            <th>Kode Perangkat</th>
+                            <th>Tanggal Pengajuan</th>
+                            <th>Deskripsi Kerusakan</th>
+                            <td>Status Pengajuan</td>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $no = 1;
                         //$read yang diambil dari control function index
-                        foreach ($read_admin->result_array() as $row) {
+                        foreach ($read->result_array() as $row) {
                             ?>
                             <tr>
                                 <td>
@@ -72,27 +73,32 @@
                                 </td>
                                 <td>
                                     <div style="text-align: center;">
+                                        <?php echo $row['id_pengajuan'] ?>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="text-align: center;">
                                         <?php echo $row['id_users'] ?>
                                     </div>
                                 </td>
                                 <td>
                                     <div style="text-align: center;">
-                                        <?php echo $row['username'] ?>
+                                        <?php echo $row['id_perangkat'] ?>
                                     </div>
                                 </td>
                                 <td>
                                     <div style="text-align: center;">
-                                        <?php echo $row['divisi'] ?>
+                                        <?php echo $row['tanggal_pengajuan'] ?>
                                     </div>
                                 </td>
                                 <td>
                                     <div style="text-align: center;">
-                                        <?php echo $row['pswd_users'] ?>
+                                        <?php echo $row['deskripsi_kerusakan'] ?>
                                     </div>
                                 </td>
                                 <td>
                                     <div style="text-align: center;">
-                                        <?php echo $row['level'] ?>
+                                        <?php echo $row['status_pengajuan'] ?>
                                     </div>
                                 </td>
                             </tr>

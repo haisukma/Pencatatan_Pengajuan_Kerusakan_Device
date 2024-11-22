@@ -16,6 +16,10 @@
                     placeholder="Username" autocomplete="off" autofocus>
                 <input type="pswd_users" class="intro-x login__input form-control py-3 px-4 block mt-4" name="pswd_users"
                     placeholder="Password" autocomplete="off">
+                <!-- <select id="level" name="level" class="intro-x login__input form-control py-3 px-4 block mt-4">
+                    <option value="admin">Admin</option>
+                    <option value="member">Member</option>
+                </select> -->
             </div>
             <div class="intro-x mt-5 xl:mt-6 text-center xl:text-left">
                 <button type="submit" class="btn btn-primary py-3 px-4 w-full align-top">Register</button>

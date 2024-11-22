@@ -35,13 +35,13 @@
             </li>
             <li>
                 <a href="<?php echo site_url('Users') ?>" class="menu">
-                    <div class="menu__icon"> <i data-lucide="truck"></i> </div>
+                    <div class="menu__icon"> <i data-lucide="box"></i> </div>
                     <div class="menu__title"> Pengguna </div>
                 </a>
             </li>
             <li>
                 <a href="<?php echo site_url('Perangkat') ?>" class="menu">
-                    <div class="menu__icon"> <i data-lucide="box"></i> </div>
+                    <div class="menu__icon"> <i data-lucide="truck"></i> </div>
                     <div class="menu__title"> Data Perangkat Pengguna </div>
                 </a>
             </li>
@@ -133,13 +133,13 @@
             </li>
             <li>
                 <a href="<?php echo site_url('Users') ?>" class="top-menu">
-                    <div class="top-menu__icon"> <i data-lucide="truck"></i> </div>
+                    <div class="top-menu__icon"> <i data-lucide="box"></i> </div>
                     <div class="top-menu__title"> Data Pengguna </div>
                 </a>
             </li>
             <li>
                 <a href="<?php echo site_url('Perangkat') ?>" class="top-menu">
-                    <div class="top-menu__icon"> <i data-lucide="box"></i> </div>
+                    <div class="top-menu__icon"> <i data-lucide="truck"></i> </div>
                     <div class="top-menu__title"> Data Perangkat Pengguna </div>
                 </a>
             </li>

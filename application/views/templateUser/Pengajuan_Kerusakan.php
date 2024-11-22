@@ -28,20 +28,26 @@
         </div>
         <ul class="border-t border-white/[0.08] py-5 hidden">
             <li>
-                <a href="<?php echo site_url('User_home') ?>" class="menu">
+                <a href="<?php echo site_url('Users_home') ?>" class="menu">
                     <div class="menu__icon"> <i data-lucide="inbox"></i> </div>
                     <div class="menu__title"> Beranda </div>
                 </a>
             </li>
             <li>
+                <a href="<?php echo site_url('Users') ?>" class="menu">
+                    <div class="menu__icon"> <i data-lucide="box"></i> </div>
+                    <div class="menu__title"> Pengguna </div>
+                </a>
+            </li>
+            <li>
                 <a href="<?php echo site_url('Perangkat') ?>" class="menu">
                     <div class="menu__icon"> <i data-lucide="truck"></i> </div>
-                    <div class="menu__title"> Perangkat_Pengguna </div>
+                    <div class="menu__title"> Perangkat Pengguna </div>
                 </a>
             </li>
             <li>
                 <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>" class="menu">
-                    <div class="menu__icon"> <i data-lucide="box"></i> </div>
+                    <div class="menu__icon"> <i data-lucide="layout"></i> </div>
                     <div class="menu__title"> Pengajuan Kerusakan </div>
                 </a>
             </li>
@@ -126,6 +132,12 @@
                 </a>
             </li>
             <li>
+                <a href="<?php echo site_url('Users') ?>" class="top-menu">
+                    <div class="top-menu__icon"> <i data-lucide="box"></i> </div>
+                    <div class="top-menu__title"> Pengguna </div>
+                </a>
+            </li>
+            <li>
                 <a href="<?php echo site_url('Perangkat') ?>" class="top-menu">
                     <div class="top-menu__icon"> <i data-lucide="truck"></i> </div>
                     <div class="top-menu__title"> Perangkat Pengguna </div>
@@ -133,7 +145,7 @@
             </li>
             <li>
                 <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>" class="top-menu top-menu--active">
-                    <div class="top-menu__icon"> <i data-lucide="box"></i> </div>
+                    <div class="top-menu__icon"> <i data-lucide="layout"></i> </div>
                     <div class="top-menu__title"> Pengajuan Kerusakan </div>
                 </a>
             </li>

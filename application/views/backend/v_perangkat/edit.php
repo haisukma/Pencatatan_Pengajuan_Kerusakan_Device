@@ -13,12 +13,12 @@
         <div class="intro-y box p-5">
           <div>
             <label for="crud-form-1" class="form-label">Kode Perangkat</label>
-            <input id="crud-form-1" type="text" name="id_wp" class="form-control w-full" placeholder="<?php echo
+            <input id="crud-form-1" type="text" name="id_perangkat" class="form-control w-full" placeholder="<?php echo
               $edit['id_perangkat'] ?>" value="<?php echo $edit['id_perangkat'] ?>" disabled>
           </div>
           <div class="mt-3">
             <label for="crud-form-1" class="form-label">Nama Perangkat</label>
-            <input id="crud-form-1" type="text" name="no_ktp" class="form-control w-full" placeholder="<?php echo
+            <input id="crud-form-1" type="text" name="nama_perangkat" class="form-control w-full" placeholder="<?php echo
               $edit['nama_perangkat'] ?>" value="<?php echo $edit['nama_perangkat'] ?>">
           </div>
           <div class="mt-3">

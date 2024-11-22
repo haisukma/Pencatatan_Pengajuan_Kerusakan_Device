@@ -22,7 +22,7 @@ class Pengajuan_Kerusakan extends CI_Controller
             //'read' variabel yang akan dipanggil pada view read.php
             'username' => $this->session->userdata('username'),
             'level' => $this->session->userdata('level'),
-            'judul' => "Wajib Master",
+            'judul' => "Data Master",
             'sub' => "Data Pengajuan Kerusakan Pengguna",
             'read' => $read
         );
@@ -30,7 +30,7 @@ class Pengajuan_Kerusakan extends CI_Controller
         dengan $this->view artinya memanggil private $view="backend/v_user/"
         dilanjutkan dengan 'read' untuk memanggil read.php
         */
-        $this->template->load('templateAdmin/Pengajuan_Kerusakan', $this->view . 'read', $data);
+        $this->template->load('templateUser/Pengajuan_Kerusakan', $this->view . 'read', $data);
     }
     public function create()
     {
@@ -41,7 +41,7 @@ class Pengajuan_Kerusakan extends CI_Controller
             'sub' => "Tambah Pengajuan Kerusakan Pengguna",
             'create' => ''
         );
-        $this->template->load('templateAdmin/Pengajuan_Kerusakan', $this->view . 'create', $data);
+        $this->template->load('templateUser/Pengajuan_Kerusakan', $this->view . 'create', $data);
         // $this->load->view($this->view . 'create', $data);
     }
     public function save()
@@ -71,7 +71,7 @@ class Pengajuan_Kerusakan extends CI_Controller
             'edit' => $this->M_pengajuan_kerusakan->edit($kd)
         );
         // $this->load->view($this->view . 'edit', $data);
-        $this->template->load('templateAdmin/Pengajuan_Kerusakan', $this->view . 'edit', $data);
+        $this->template->load('templateUser/Pengajuan_Kerusakan', $this->view . 'edit', $data);
     }
     public function update()
     {
@@ -96,6 +96,28 @@ class Pengajuan_Kerusakan extends CI_Controller
         redirect($this->redirect, 'refresh');
 
 
+    }
+    public function print()
+    {
+        $data['print'] = $this->M_pengajuan_kerusakan->GetAll();
+        $read = $this->M_pengajuan_kerusakan->GetAll();
+        $data = array(
+            //'read' variabel yang akan dipanggil pada view read.php
+            'judul' => "Data Pengajuan Kerusakan Pengguna",
+            'read' => $read
+        );
+        $this->load->view($this->view . 'print', $data);
+    }
+    public function excel()
+    {
+        $data['print'] = $this->M_pengajuan_kerusakan->GetAll();
+        $read = $this->M_pengajuan_kerusakan->GetAll();
+        $data = array(
+            //'read' variabel yang akan dipanggil pada view read.php
+            'judul' => "Data Pengajuan Kerusakan Pengguna",
+            'read' => $read
+        );
+        $this->load->view($this->view . 'excel', $data);
     }
 
 }
