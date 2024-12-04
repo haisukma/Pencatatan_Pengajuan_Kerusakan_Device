@@ -58,13 +58,11 @@
                         <tr>
                             <th class="text-center whitespace-nowrap">No</th>
                             <th class="text-center whitespace-wrap">Kode Pengajuan</th>
-                            <th class="text-center whitespace-wrap">Kode User</th>
-                            <th class="text-center whitespace-wrap">Kode Perangkat</th>
+                            <th class="text-center whitespace-wrap">Username</th>
+                            <th class="text-center whitespace-wrap">Nama Perangkat</th>
                             <th class="text-center whitespace-wrap">Tanggal Pengajuan</th>
                             <th class="text-center whitespace-wrap">Deskripsi Kerusakan</th>
                             <th class="text-center whitespace-wrap">Status Pengajuan</th>
-                            <th class="text-center whitespace-nowrap">Aksi</th>
-                        </tr>
                     </thead>
                     <tbody>
                         <?php
@@ -85,12 +83,12 @@
                                     </td>
                                     <td class="w-40 whitespace-nowrap">
                                         <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['id_users'] ?>
+                                            <?php echo $row['username'] ?>
                                         </div>
                                     </td>
                                     <td class="w-40 whitespace-nowrap">
                                         <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['id_perangkat'] ?>
+                                            <?php echo $row['nama_perangkat'] ?>
                                         </div>
                                     </td>
                                     <td class="w-40 whitespace-nowrap">
@@ -110,13 +108,6 @@
                                     </td>
                                     <td class="table-report__action w-56">
                                         <div class="flex justify-center items-center">
-                                            <a class="flex items-center mr-3"
-                                                href="<?php echo site_url('Pengajuan_Kerusakan/edit/' . $row['id_pengajuan']) ?>"> <i
-                                                    data-lucide="edit" class="w-4 h-4 mr-1"></i> Edit </a>
-                                            <a class="flex items-center text-danger"
-                                                href="<?php echo site_url('Pengajuan_Kerusakan/delete/' . $row['id_pengajuan']) ?>"
-                                                onclick="javascript: return confirm('Yakin Mau dihapus <?php echo $row['id_pengajuan'], 'dengan id_users', $row['id_users']; ?>')">
-                                                <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                             <?php
                                             $no++;
                             }

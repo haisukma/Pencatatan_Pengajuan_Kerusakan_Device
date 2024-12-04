@@ -60,7 +60,6 @@
                             <th class="text-center whitespace-wrap">Kode Perangkat</th>
                             <th class="text-center whitespace-wrap">Nama Perangkat</th>
                             <th class="text-center whitespace-wrap">Merk</th>
-                            <th class="text-center whitespace-wrap">Serial Number</th>
                             <th class="text-center whitespace-wrap">Lokasi Perangkat</th>
                             <th class="text-center whitespace-nowrap">Aksi</th>
                         </tr>
@@ -94,13 +93,8 @@
                                     </td>
                                     <td class="w-40 whitespace-nowrap">
                                         <div class="flex items-center justify-center capitalize">
-                                            <?php echo $row['serial_number'] ?>
-                                        </div>
-                                    </td>
-                                    <td class="w-40 whitespace-nowrap">
-                                        <div class="flex items-center justify-center capitalize">
                                             <?php echo $row['lokasi_perangkat'] ?>
-                                        </div>
+                                      </div>
                                     </td>
                                     <td class="table-report__action w-56">
                                         <div class="flex justify-center items-center">

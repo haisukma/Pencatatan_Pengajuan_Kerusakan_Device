@@ -8,7 +8,7 @@
     <div class="grid grid-cols-16 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-6">
             <!-- BEGIN: Form Layout -->
-            <form class="" action="<?php echo site_url('Pengajuan_Kerusakan/save') ?>" method="post">
+            <form class="" action="<?php echo site_url('Pengajuan_KerusakanAdmin/save') ?>" method="post">
                 <div class="intro-y box p-5">
                     <div class="mt-3">
                         <label for="crud-form-2" class="form-label">Perangkat</label>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="mt-3">
                     <div class="text-right mt-5">
-                        <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>"><button type="button"
+                        <a href="<?php echo site_url('Pengajuan_KerusakanAdmin') ?>"><button type="button"
                                 class="btn btn-danger w-24 mr-1">Cancel</button></a>
                         <button type="submit" class="btn btn-primary w-24">Save</button>
                     </div>

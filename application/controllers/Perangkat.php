@@ -30,7 +30,7 @@ class Perangkat extends CI_Controller
         dengan $this->view artinya memanggil private $view="backend/v_user/"
         dilanjutkan dengan 'read' untuk memanggil read.php
         */
-        $this->template->load('templateUser/Perangkat', $this->view . 'read', $data);
+        $this->template->load('templateAdmin/Perangkat', $this->view . 'read', $data);
     }
     public function create()
     {
@@ -41,7 +41,7 @@ class Perangkat extends CI_Controller
             'sub' => "Tambah Perangkat Pengguna",
             'create' => ''
         );
-        $this->template->load('templateUser/Perangkat', $this->view . 'create', $data);
+        $this->template->load('templateAdmin/Perangkat', $this->view . 'create', $data);
         // $this->load->view($this->view . 'create', $data);
     }
     public function save()
@@ -50,7 +50,6 @@ class Perangkat extends CI_Controller
             'id_perangkat' => $this->input->post('id_perangkat'),
             'nama_perangkat' => $this->input->post('nama_perangkat'),
             'merk' => $this->input->post('merk'),
-            'serial_number' => $this->input->post('serial_number'),
             'lokasi_perangkat' => $this->input->post('lokasi_perangkat')
         );
         $this->M_perangkat->save($data);
@@ -70,7 +69,7 @@ class Perangkat extends CI_Controller
             'edit' => $this->M_perangkat->edit($kd)
         );
         // $this->load->view($this->view . 'edit', $data);
-        $this->template->load('templateUser/Perangkat', $this->view . 'edit', $data);
+        $this->template->load('templateAdmin/Perangkat', $this->view . 'edit', $data);
     }
     public function update()
     {
@@ -78,7 +77,6 @@ class Perangkat extends CI_Controller
         $data = array(
             'nama_perangkat' => $this->input->post('nama_perangkat'),
             'merk' => $this->input->post('merk'),
-            'serial_number' => $this->input->post('serial_number'),
             'lokasi_perangkat' => $this->input->post('lokasi_perangkat')
         );
         $this->M_perangkat->update($kd, $data);

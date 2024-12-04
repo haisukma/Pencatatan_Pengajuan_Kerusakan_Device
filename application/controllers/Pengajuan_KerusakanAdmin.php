@@ -1,9 +1,9 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-class Pengajuan_Kerusakan extends CI_Controller
+class Pengajuan_KerusakanAdmin extends CI_Controller
 {
-    private $view = "backend/v_pengajuan_kerusakan/";
-    private $redirect = "Pengajuan_Kerusakan";
+    private $view = "backend/v_pengajuan_kerusakanadmin/";
+    private $redirect = "Pengajuan_KerusakanAdmin";
     public function __construct()
     {
         parent::__construct();
@@ -29,7 +29,7 @@ class Pengajuan_Kerusakan extends CI_Controller
         dengan $this->view artinya memanggil private $view="backend/v_user/"
         dilanjutkan dengan 'read' untuk memanggil read.php
         */
-        $this->template->load('templateUser/Pengajuan_Kerusakan', $this->view . 'read', $data);
+        $this->template->load('templateAdmin/Pengajuan_KerusakanAdmin', $this->view . 'read', $data);
     }
     public function create()
     {
@@ -42,7 +42,7 @@ class Pengajuan_Kerusakan extends CI_Controller
             'getperangkat' => $this->M_perangkat->GetAll(),
             'create' => ''
         );
-        $this->template->load('templateUser/Pengajuan_Kerusakan', $this->view . 'create', $data);
+        $this->template->load('templateAdmin/Pengajuan_KerusakanAdmin', $this->view . 'create', $data);
         // $this->load->view($this->view . 'create', $data);
     }
     public function save()
@@ -67,22 +67,22 @@ class Pengajuan_Kerusakan extends CI_Controller
         }
 
 
-    // public function edit()
-    // {
-    //     $kd = $this->uri->segment(3);
-    //     // echo $kd;
-    //     $data = array(
-    //         'username' => $this->session->userdata('username'),
-    //         'level' => $this->session->userdata('level'),
-    //         'judul' => "Data Master",
-    //         'sub' => "Ubah Data Pengajuan Pengguna",
-    //         'getuser' => $this->M_users->GetAll(),
-    //         'getperangkat' => $this->M_perangkat->GetAll(),
-    //         'edit' => $this->M_pengajuan_kerusakan->edit($kd)
-    //     );
-    //     // $this->load->view($this->view . 'edit', $data);
-    //     $this->template->load('templateUser/Pengajuan_Kerusakan', $this->view . 'edit', $data);
-    // }
+    public function edit()
+    {
+        $kd = $this->uri->segment(3);
+        // echo $kd;
+        $data = array(
+            'username' => $this->session->userdata('username'),
+            'level' => $this->session->userdata('level'),
+            'judul' => "Data Master",
+            'sub' => "Ubah Data Pengajuan Pengguna",
+            'getuser' => $this->M_users->GetAll(),
+            'getperangkat' => $this->M_perangkat->GetAll(),
+            'edit' => $this->M_pengajuan_kerusakan->edit($kd)
+        );
+        // $this->load->view($this->view . 'edit', $data);
+        $this->template->load('templateAdmin/Pengajuan_KerusakanAdmin', $this->view . 'edit', $data);
+    }
     public function update()
     {
         $kd = $this->uri->segment(3);
@@ -105,17 +105,17 @@ class Pengajuan_Kerusakan extends CI_Controller
         $this->M_pengajuan_kerusakan->update($kd, $data);
         redirect($this->redirect, 'refresh');
     }
-    // public function delete()
-    // {
-    //     $kd = $this->uri->segment(3);
-    //     $data = array(
-    //         'id_pengajuan' => $kd
-    //     );
-    //     $this->M_pengajuan_kerusakan->delete($data);
-    //     redirect($this->redirect, 'refresh');
+    public function delete()
+    {
+        $kd = $this->uri->segment(3);
+        $data = array(
+            'id_pengajuan' => $kd
+        );
+        $this->M_pengajuan_kerusakan->delete($data);
+        redirect($this->redirect, 'refresh');
 
 
-    // }
+    }
     public function print()
     {
         $data['print'] = $this->M_pengajuan_kerusakan->GetAll();

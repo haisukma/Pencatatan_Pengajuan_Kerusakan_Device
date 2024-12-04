@@ -27,7 +27,7 @@ class Users extends CI_Controller
       'username' => $this->session->userdata('username'),
       'level' => $this->session->userdata('level'),
       'judul' => "Data Master",
-      'sub' => "Halaman Pengguna",
+      'sub' => "Data Pengguna",
       'read_admin' => $read_admin,
       'read_user' => $read_user
     );

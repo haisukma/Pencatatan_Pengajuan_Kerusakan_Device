@@ -23,11 +23,12 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Kode Pengajuan</th>
+                        <th>Kode User</th>
                         <th>Kode Perangkat</th>
-                        <th>Nama Perangkat</th>
-                        <th>Merk</th>
-                        <th>Serial Number</th>
-                        <th>Lokasi Perangkat</th>
+                        <th>Tanggal Pengajuan</th>
+                        <th>Deskripsi Kerusakan</th>
+                        <th>Status Pengajuan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,29 +38,39 @@
                     foreach ($read->result_array() as $row) {
                         ?>
                         <tr>
-                            <td class="w-40">
-                                <div class="flex">
+                            <td>
+                                <div style="text-align: center;">
                                     <?php echo $no ?>
                                 </div>
                             </td>
-                            <td class="w-40 whitespace-nowrap">
-                                <div class="flex items-center justify-center">
+                            <td>
+                                <div style="text-align: center;">
+                                    <?php echo $row['id_pengajuan'] ?>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="text-align: center;">
+                                    <?php echo $row['id_users'] ?>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="text-align: center;">
                                     <?php echo $row['id_perangkat'] ?>
                                 </div>
                             </td>
-                            <td class="w-40 whitespace-nowrap">
-                                <div class="flex items-center justify-center">
-                                    <?php echo $row['nama_perangkat'] ?>
+                            <td>
+                                <div style="text-align: center;">
+                                    <?php echo $row['tanggal_pengajuan'] ?>
                                 </div>
                             </td>
-                            <td class="w-40 whitespace-nowrap">
-                                <div class="flex items-center justify-center">
-                                    <?php echo $row['merk'] ?>
+                            <td>
+                                <div style="text-align: center;">
+                                    <?php echo $row['deskripsi_kerusakan'] ?>
                                 </div>
                             </td>
-                            <td class="w-40 whitespace-wrap">
-                                <div class="flex items-center justify-center">
-                                    <?php echo $row['lokasi_perangkat'] ?>
+                            <td>
+                                <div style="text-align: center;">
+                                    <?php echo $row['status_pengajuan'] ?>
                                 </div>
                             </td>
                         </tr>

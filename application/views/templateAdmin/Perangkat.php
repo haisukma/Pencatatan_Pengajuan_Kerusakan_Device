@@ -138,13 +138,13 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Perangkat') ?>" class="top-menu">
+                <a href="<?php echo site_url('Perangkat') ?>" class="top-menu top-menu--active">
                     <div class="top-menu__icon"> <i data-lucide="truck"></i> </div>
                     <div class="top-menu__title"> Data Perangkat Pengguna </div>
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>" class="top-menu">
+                <a href="<?php echo site_url('Pengajuan_KerusakanAdmin') ?>" class="top-menu">
                     <div class="top-menu__icon"> <i data-lucide="layout"></i> </div>
                     <div class="top-menu__title"> Data Pengajuan Kerusakan Pengguna </div>
                 </a>

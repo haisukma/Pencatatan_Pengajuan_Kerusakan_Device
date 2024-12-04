@@ -12,7 +12,7 @@
             <div class="intro-y box p-5">
                <div>
                   <label for="crud-form-1" class="form-label">Kode User</label>
-                  <input id="crud-form-1" type="text" name="id_users" class="form-control w-full" placeholder="123xxx"
+                  <input id="crud-form-1" type="number" name="id_users" class="form-control w-full" placeholder="123xxx"
                      autocomplete="off">
                   <?php if (isset($kode_error) && $kode_error): ?>
                      <div class="text-danger mt-2">

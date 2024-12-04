@@ -27,11 +27,6 @@
               $edit['merk'] ?>" value="<?php echo $edit['merk'] ?>" autocomplete="off">
           </div>
           <div class="mt-3">
-            <label for="crud-form-1" class="form-label">Serial Number</label>
-            <input id="crud-form-1" type="text" name="serial_number" class="form-control w-full" placeholder="<?php echo
-              $edit['serial_number'] ?>" value="<?php echo $edit['serial_number'] ?>" autocomplete="off">
-          </div>
-          <div class="mt-3">
             <label for="crud-form-1" class="form-label">Lokasi Perangkat</label>
             <textarea name="lokasi_perangkat" class="form-control" id="" placeholder="<?php echo $edit['lokasi_perangkat'] ?>" rows="4"
               cols="4" required autocomplete="off"><?php echo $edit['lokasi_perangkat'] ?></textarea>

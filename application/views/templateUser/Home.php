@@ -34,18 +34,6 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Users') ?>" class="menu">
-                    <div class="menu__icon"> <i data-lucide="box"></i> </div>
-                    <div class="menu__title"> Pengguna </div>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo site_url('Perangkat') ?>" class="menu">
-                    <div class="menu__icon"> <i data-lucide="truck"></i> </div>
-                    <div class="menu__title"> Data Perangkat Pengguna </div>
-                </a>
-            </li>
-            <li>
                 <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>" class="menu">
                     <div class="menu__icon"> <i data-lucide="layout"></i> </div>
                     <div class="menu__title"> Data Pengajuan Kerusakan </div>
@@ -132,19 +120,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Users') ?>" class="top-menu">
-                    <div class="top-menu__icon"> <i data-lucide="box"></i> </div>
-                    <div class="top-menu__title"> Data Pengguna </div>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo site_url('Perangkat') ?>" class="top-menu">
-                    <div class="top-menu__icon"> <i data-lucide="truck"></i> </div>
-                    <div class="top-menu__title"> Data Perangkat Pengguna </div>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo site_url('Pengajuan_Perangkat') ?>" class="top-menu">
+                <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>" class="top-menu">
                     <div class="top-menu__icon"> <i data-lucide="layout"></i> </div>
                     <div class="top-menu__title"> Data Pengajuan Perangkat Pengguna </div>
                 </a>

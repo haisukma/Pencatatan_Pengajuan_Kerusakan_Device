@@ -11,8 +11,9 @@
 
 				<input type="text" class="intro-x login__input form-control py-3 px-4 block" name="username"
 					placeholder="Username" autocomplete="off" autofocus>
-				<input type="pswd_users" class="intro-x login__input form-control py-3 px-4 block mt-4" name="pswd_users"
-					placeholder="Password" autocomplete="off">
+				<!-- <input type="pswd_users" class="intro-x login__input form-control py-3 px-4 block mt-4" name="pswd_users"
+					placeholder="Password" autocomplete="off"> -->
+				<input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" name="pswd_users" placeholder="Password">
 				<?php if ($this->session->flashdata('login_error')): ?>
 					<div class="text-danger mt-2">
 						<?php echo $this->session->flashdata('login_error'); ?>

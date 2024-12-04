@@ -148,7 +148,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>" class="top-menu">
+                <a href="<?php echo site_url('Pengajuan_KerusakanAdmin') ?>" class="top-menu">
                     <div class="top-menu__icon"> <i data-lucide="layout"></i> </div>
                     <div class="top-menu__title"> Data Pengajuan Kerusakan Pengguna </div>
                 </a>

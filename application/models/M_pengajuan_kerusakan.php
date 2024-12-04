@@ -7,6 +7,8 @@ class M_pengajuan_kerusakan extends CI_Model
     public function GetAll()
     {
         $this->db->order_by($this->pk, 'asc');
+        $this->db->join('tb_users', 'tb_pengajuan_kerusakan.id_users=tb_users.id_users');
+        $this->db->join('tb_perangkat', 'tb_pengajuan_kerusakan.id_perangkat=tb_perangkat.id_perangkat');
         return $this->db->get($this->table);
     }
     public function save($data)
@@ -31,6 +33,14 @@ class M_pengajuan_kerusakan extends CI_Model
     public function edit($kd)
     {
         $this->db->where($this->pk, $kd);
+        return $this->db->get($this->table)->row_array();
+    }
+
+    public function lihat($kd)
+    {
+        $this->db->where($this->pk, $kd);
+        $this->db->join('tb_users', 'tb_pengajuan_kerusakan.id_pengajuan=tb_users.id_users');
+        $this->db->join('tb_perangkat', 'tb_pengajuan_kerusakan.id_pengajuan=tb_perangkat.id_perangkat');
         return $this->db->get($this->table)->row_array();
     }
     public function update($kd, $data)

@@ -13,7 +13,7 @@
                     <div>
                         <label for="crud-form-1" class="form-label">Kode Perangkat</label>
                         <input id="crud-form-1" type="number" name="id_perangkat" class="form-control w-full"
-                            placeholder="10xxx" required autocomplete="off">
+                            placeholder="20xxx" required autocomplete="off">
                         <?php if (isset($kode_error) && $kode_error): ?>
                             <div class="text-danger mt-2">
                                 Kode Perangkat sudah digunakan, harap pilih Kode Perangkat lain.
@@ -30,11 +30,11 @@
                         <input id="crud-form-1" type="text" name="merk" class="form-control w-full"
                             placeholder="Acer" required autocomplete="off">
                     </div>
-                    <div class="mt-3">
+                    <!-- <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Serial Number</label>
                         <input id="crud-form-1" type="text" name="serial_number" class="form-control w-full"
                             placeholder="A0065i" required autocomplete="off">
-                    </div>
+                    </div> -->
                     <div class="mt-3">
                         <label for="crud-form-1" class="form-label">Lokasi Perangkat</label>
                         <input id="crud-form-1" type="text" name="lokasi_perangkat" class="form-control w-full"

@@ -11,6 +11,10 @@
     </title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/dist/css/app.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
     <!-- END: CSS Assets-->
 </head>
 <!-- END: Head -->
@@ -138,13 +142,13 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Perangkat') ?>" class="top-menu top-menu--active">
+                <a href="<?php echo site_url('Perangkat') ?>" class="top-menu">
                     <div class="top-menu__icon"> <i data-lucide="truck"></i> </div>
                     <div class="top-menu__title"> Data Perangkat Pengguna </div>
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Pengajuan_Kerusakan') ?>" class="top-menu">
+                <a href="<?php echo site_url('Pengajuan_KerusakanAdmin') ?>" class="top-menu top-menu--active">
                     <div class="top-menu__icon"> <i data-lucide="layout"></i> </div>
                     <div class="top-menu__title"> Data Pengajuan Kerusakan Pengguna </div>
                 </a>
@@ -161,10 +165,12 @@
     <!-- END: Content -->
 
     <!-- BEGIN: JS Assets-->
-    <script
-        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="<?= base_url(); ?>assets/dist/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
 
     <!-- END: JS Assets-->
 </body>
